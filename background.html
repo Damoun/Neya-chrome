@@ -1,0 +1,25 @@
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+<script>
+  var playerList = [];
+  var playerCount = 0;
+  setTimeout(loadPlayerMarkers, 1000);
+  function loadPlayerMarkers()
+{
+    $.getJSON('http://minemap.verygames.net/server5115/world/markers.json', function(data) {
+  playerList = [];
+  playerCount = 0;
+        for (i in data)
+        {
+            var item = data[i];
+            if (item.msg != "Spawn")
+            {
+                if (playerCount <= 10)
+                playerList.push('&nbsp;<img src="http://www.verygames.net/minecraft/Player-Avatar/player-avatar.php?player=' + item.msg + '&usage=list" border="0" />&nbsp;&nbsp;' + item.msg + '<br />');
+	        else if (playerCount == 11)
+                     playerList.push('&nbsp;<center><a href="#" onclick="chrome.tabs.create({url: \'http://minemap.verygames.net/server5115/world/\'})">+++</a></center><br />');
+                ++playerCount;
+            }
+	}
+});
+}
+</script>

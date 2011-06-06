@@ -1,0 +1,19 @@
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+<script>
+setTimeout(loadHandler, 1000);
+function loadHandler()
+{
+$("#user").empty();
+var bg = chrome.extension.getBackgroundPage();
+        $("#user").html('<img src="http://img.verygames.net/images/status_panel/up_mc.png" border="0" width="15px" height="15px" />&nbsp;&nbsp;' + bg.playerCount + ' Players Online<br /><br />' + bg.playerList.join(""));
+}
+</script>
+<body onload="loadHandler()" style="width: 200px">
+<div id="link">
+<a href="#" onclick="chrome.tabs.create({url: 'http://minecraft-serveur-neya.xooit.fr/'})">Forum</a><br />
+<img src="/images/map.png" width="15px" height="15px" /> <a href="#" onclick="chrome.tabs.create({url: 'http://minemap.verygames.net/server5115/world/'})">Map</a><br /><br />
+</div>
+
+<div id="user">
+</div>
+</body>

@@ -1,0 +1,22 @@
+{
+  "name": "Neya",
+  "version": "0.42",
+  "description": "Google Chrome extension for Minecraft server Neya",
+  "background_page": "background.html",
+  "icons": { "48": "images/logo.png" },
+  "content_scripts": [
+    {
+      "matches": ["http://minemap.verygames.net/server5115/world/*"],
+      "js": ["removeAd.js"]
+    }
+  ],
+  "permissions": [
+  "tabs",
+    "http://minemap.verygames.net/server5115/world/*"
+  ],
+  "browser_action": {
+    "default_title": "",
+    "default_icon": "images/icon.png",
+    "popup": "popup.html"
+  }
+}
