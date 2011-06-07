@@ -5,7 +5,12 @@ function loadHandler()
 {
 $("#user").empty();
 var bg = chrome.extension.getBackgroundPage();
+if (bg.playerCount > 0)
         $("#user").html('<img src="http://img.verygames.net/images/status_panel/up_mc.png" border="0" width="15px" height="15px" />&nbsp;&nbsp;' + bg.playerCount + ' Players Online<br /><br />' + bg.playerList.join(""));
+else if (bg.playerCount == 1)
+        $("#user").html('<img src="http://img.verygames.net/images/status_panel/up_mc.png" border="0" width="15px" height="15px" />&nbsp;&nbsp;' + ' 1 Player Online<br /><br />' + bg.playerList.join(""));
+else
+        $("#user").html('<img src="http://img.verygames.net/images/status_panel/pause_mc.png" border="0" width="15px" height="15px" />&nbsp;&nbsp;' + ' No Player Online<br /><br />' + bg.playerList.join(""));
 }
 </script>
 <body onload="loadHandler()" style="width: 200px">
