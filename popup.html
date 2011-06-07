@@ -1,6 +1,5 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
 <script>
-setTimeout(loadHandler, 1000);
 function loadHandler()
 {
 $("#user").empty();
@@ -11,6 +10,7 @@ else if (bg.playerCount == 1)
         $("#user").html('<img src="http://img.verygames.net/images/status_panel/up_mc.png" border="0" width="15px" height="15px" />&nbsp;&nbsp;' + ' 1 Player Online<br /><br />' + bg.playerList.join(""));
 else
         $("#user").html('<img src="http://img.verygames.net/images/status_panel/pause_mc.png" border="0" width="15px" height="15px" />&nbsp;&nbsp;' + ' No Player Online<br /><br />' + bg.playerList.join(""));
+setTimeout(loadHandler, 1000);
 }
 </script>
 <body onload="loadHandler()" style="width: 200px">
