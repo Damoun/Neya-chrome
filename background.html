@@ -13,13 +13,14 @@
             var item = data[i];
             if (item.msg != "Spawn")
             {
-                if (playerCount <= 10)
-                playerList.push('&nbsp;<img src="http://www.verygames.net/minecraft/Player-Avatar/player-avatar.php?player=' + item.msg + '&usage=list" border="0" />&nbsp;&nbsp;' + item.msg + '<br />');
-	        else if (playerCount == 11)
-                     playerList.push('&nbsp;<center><a href="#" onclick="chrome.tabs.create({url: \'http://minemap.verygames.net/server5115/world/\'})">+++</a></center><br />');
+                if (playerCount < 10)
+                playerList.push('<div class="player" ><img src="http://www.verygames.net/minecraft/Player-Avatar/player-avatar.php?player=' + item.msg + '&usage=list" border="0" /> ' + item.msg + '</div>');
                 ++playerCount;
             }
 	}
+  playerList.sort();
+  if (playerCount == 10)
+      playerList.push('<div class="link center" onclick="chrome.tabs.create({url: \'http://minemap.verygames.net/server5115/world/\'})">+++</div>');
 });
 setTimeout(loadPlayerMarkers, 1000);
 }

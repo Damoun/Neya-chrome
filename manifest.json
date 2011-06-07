@@ -7,7 +7,7 @@
   "content_scripts": [
     {
       "matches": ["http://minemap.verygames.net/server5115/world/*"],
-      "js": ["removeAd.js"]
+      "js": ["js/removeAd.js"]
     }
   ],
   "permissions": [

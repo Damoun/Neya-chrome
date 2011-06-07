@@ -1,24 +1,13 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
-<script>
-function loadHandler()
-{
-$("#user").empty();
-var bg = chrome.extension.getBackgroundPage();
-if (bg.playerCount > 0)
-        $("#user").html('<img src="http://img.verygames.net/images/status_panel/up_mc.png" border="0" width="15px" height="15px" />&nbsp;&nbsp;' + bg.playerCount + ' Players Online<br /><br />' + bg.playerList.join(""));
-else if (bg.playerCount == 1)
-        $("#user").html('<img src="http://img.verygames.net/images/status_panel/up_mc.png" border="0" width="15px" height="15px" />&nbsp;&nbsp;' + ' 1 Player Online<br /><br />' + bg.playerList.join(""));
-else
-        $("#user").html('<img src="http://img.verygames.net/images/status_panel/pause_mc.png" border="0" width="15px" height="15px" />&nbsp;&nbsp;' + ' No Player Online<br /><br />' + bg.playerList.join(""));
-setTimeout(loadHandler, 1000);
-}
-</script>
-<body onload="loadHandler()" style="width: 200px">
-<div id="link">
-<a href="#" onclick="chrome.tabs.create({url: 'http://minecraft-serveur-neya.xooit.fr/'})">Forum</a><br />
-<img src="/images/map.png" width="15px" height="15px" /> <a href="#" onclick="chrome.tabs.create({url: 'http://minemap.verygames.net/server5115/world/'})">Map</a><br /><br />
-</div>
-
-<div id="user">
-</div>
+<script type="text/javascript" src="js/popup.js"></script>
+<link rel="stylesheet" href="css/popup.css" type="text/css">
+<body onload="loadHandler()">
+  <div id="link">
+    <div id="logo" class="center title">Neya</div>
+    <div id="forum" class="link" onclick="chrome.tabs.create({url: 'http://minecraft-serveur-neya.xooit.fr/'})"><img src="/images/book.png" width="15px" height="15px" /> Forum</div>
+    <div id="map" class="link" onclick="chrome.tabs.create({url: 'http://minemap.verygames.net/server5115/world/'})"><img src="/images/map.png" width="15px" height="15px" /> Map</div>
+  </div>
+  <br />
+  <div id="user">
+  </div>
 </body>

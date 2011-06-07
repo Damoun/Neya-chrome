@@ -1,0 +1,36 @@
+.player > img {
+    border:solid 1px black
+}
+
+.player {
+    background-color: #CECECE;
+    padding: 2px 5px;
+}
+
+.center {
+    text-align: center;
+}
+
+.title {
+    background-color: #000000;
+    text-decoration: blink;
+    color: #FFFFFF;
+    cursor: hand;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.link {
+    padding: 2px 5px;
+    background-color: #CECECE;
+}
+
+.link:hover {
+    text-decoration: blink;
+    cursor: hand;
+    background-color: #9A9A9A;
+}
+
+body {
+    width: 200px;
+}
