@@ -14,7 +14,7 @@
             if (item.msg != "Spawn")
             {
                 if (playerCount < 10)
-                playerList.push('<div class="player" ><img src="http://www.verygames.net/minecraft/Player-Avatar/player-avatar.php?player=' + item.msg + '&usage=list" border="0" /> ' + item.msg + '</div>');
+                playerList.push('<div class="player link" onclick="chrome.tabs.create({url: \'http://minemap.verygames.net/server5115/world/#/' + item.x + '/' + item.y + '/' + item.z + '/max\'})"><img src="http://www.verygames.net/minecraft/Player-Avatar/player-avatar.php?player=' + item.msg + '&usage=list" border="0" /> ' + item.msg + '</div>');
                 ++playerCount;
             }
 	}
