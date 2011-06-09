@@ -3,6 +3,7 @@
   "version": "0.42",
   "description": "Google Chrome extension for Minecraft server Neya",
   "background_page": "background.html",
+  "update_url": "http://damoun.github.com/Neya-chrome/update.xml",
   "icons": { "48": "images/neya-48.png", "128": "images/neya-128.png" },
   "content_scripts": [
     {
@@ -12,7 +13,8 @@
   ],
   "permissions": [
   "tabs",
-    "http://minemap.verygames.net/server5115/world/*"
+  "http://minemap.verygames.net/server5115/world/*",
+  "http://www.serveurs-minecraft.org/vote.php?id=1962"
   ],
   "browser_action": {
     "default_title": "",

@@ -34,3 +34,8 @@
 body {
     width: 200px;
 }
+
+#diamond {
+    display: none;
+    float: right;
+}
