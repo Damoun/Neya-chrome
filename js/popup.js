@@ -14,7 +14,7 @@ function loadPlayers()
 function displayDiamond()
 {
     var bg = chrome.extension.getBackgroundPage();
-    if (bg.canVote == false)
+    if (bg.canVote == true)
     {
 	$('#diamond').show();
 	$('#vote').attr('title', "Vous n'avez pas encore vot\351 aujourd'hui");

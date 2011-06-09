@@ -1,6 +1,6 @@
 {
   "name": "Neya",
-  "version": "0.42",
+  "version": "2.42",
   "description": "Google Chrome extension for Minecraft server Neya",
   "background_page": "background.html",
   "update_url": "http://damoun.github.com/Neya-chrome/update.xml",
