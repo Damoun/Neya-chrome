@@ -3,12 +3,6 @@ var canVote = false;
 var playerList = [];
 var playerCount = 0;
 
-function background()
-{
-    haveYouVote();
-    loadPlayerMarkers();
-}
-
 function loadPlayerMarkers()
 {
     $.getJSON('http://minemap.verygames.net/server5115/world/markers.json', function(data) {
@@ -47,17 +41,19 @@ function haveYouVote()
         dataType: "html",
 	async: false,
         success: function(data) {
-	    console.log("meede");
 	    content = data;
         },
-	complete: function(jqXHR, textStatus) {
-	    console.log(textStatus);
-	}
     });
     console.log(content);
-    if (content.search("Voulez-vous bien voter pour Neya ?") != -1)
+    if (content.search('<input type="submit" value="Oui je vote pour Neya" class="yes">') != -1)
 	canVote = true;
     else
 	canVote = false;
     setTimeout(haveYouVote, 3600000);
+}
+
+function background()
+{
+    haveYouVote();
+    loadPlayerMarkers();
 }
